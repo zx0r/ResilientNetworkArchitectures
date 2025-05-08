@@ -356,7 +356,7 @@ pacman -S xray
 
 **Android Installation**:
 
-- Install v2rayNG or NekoBox from Google Play Store or F-Droid
+- Install v2rayNG or NekoBox from Google Play Store or F-Droid [NekoBoxForAndroid](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
 - Enable XRay core in settings (v2rayNG) or use sing-box core (NekoBox)
 - Import VLESS+XTLS configuration
 

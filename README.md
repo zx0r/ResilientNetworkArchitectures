@@ -125,7 +125,7 @@ Performance metrics were gathered using standardized testing tools including ipe
 
 V2Ray represents a modular platform rather than a single protocol, supporting multiple transport protocols and encryption methods. The architecture employs a core-and-plugin design facilitating adaptation to evolving network environments.
 
-#### Technical Architecture
+###### Technical Architecture
 
 V2Ray's architecture consists of:
 
@@ -140,7 +140,7 @@ The VMess protocol, native to V2Ray, provides:
 - Anti-replay protection
 - Dynamic header obfuscation
 
-#### Protocol Variants
+###### Protocol Variants
 
 **VMess Protocol**:
 
@@ -154,11 +154,11 @@ The VMess protocol, native to V2Ray, provides:
 - Designed for compatibility with XTLS for enhanced performance
 - Simplified header structure
 
-#### Performance Characteristics
+###### Performance Characteristics
 
 VMess provides good obfuscation but with moderate overhead. VLESS offers improved performance but requires additional obfuscation layers for optimal detection resistance.
 
-#### Detection Resistance
+##### Detection Resistance
 
 V2Ray protocols implement several anti-detection mechanisms:
 
@@ -167,7 +167,7 @@ V2Ray protocols implement several anti-detection mechanisms:
 - TLS encryption layer
 - WebSocket transport layer to simulate web browsing
 
-#### Installation and Configuration for V2Ray
+##### Installation and Configuration for V2Ray
 
 **Windows Installation**:
 
@@ -261,13 +261,13 @@ pacman -S v2ray
 }
 ```
 
-#### Recommendations
+##### Recommendations
 
 - For general use, VMess over WebSocket with TLS provides a good balance of security and detection resistance
 - In highly restricted environments, consider VMess with WebSocket + TLS + CDN configuration
 - Use VLESS+XTLS when performance is prioritized and the network filtering is less aggressive
 
-#### Repository References
+###### Repository References
 
 - V2Fly Core: [https://github.com/v2fly/v2ray-core](https://github.com/v2fly/v2ray-core)
 - V2Ray Documentation: [https://www.v2fly.org/en_US/](https://www.v2fly.org/en_US/)

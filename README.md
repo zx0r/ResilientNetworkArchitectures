@@ -1,6 +1,6 @@
 <small>
 
-> ### DISCLAIMER
+> #### DISCLAIMER
 
 > This project and the information contained herein (including the configuration examples, scripts, and benchmarks) are provided for **academic research, educational, and informational purposes only**. The goal is to foster a better understanding of network circumvention technologies, network security, and privacy-enhancing tools.
 > The technologies and methods discussed can be complex and may have legal implications that vary significantly by jurisdiction. Users of this information are **solely responsible** for ensuring that their actions comply with all applicable local, state, national, and international laws and regulations.
@@ -14,14 +14,14 @@
 
 </small>
 
-## Resilient Network Architectures: Analysis of Secure Communication Protocols in Adversarial Environments
+### Resilient Network Architectures: Analysis of Secure Communication Protocols in Adversarial Environments
 
 <div align="center">
-<h2>A Systematic Review of Contemporary Network Technologies</h2>
-<h3>Technical Architectures, Implementation Methodologies, and Empirical Efficacy Analysis</h3>
+<h3>A Systematic Review of Contemporary Network Technologies</h2>
+<h4>Technical Architectures, Implementation Methodologies, and Empirical Efficacy Analysis</h3>
 </div>
 
-## Abstract
+#### Abstract
 
 This study provides a systematic, neutral evaluation of network resilience technologies as of 2025, analyzing architectural frameworks, cryptographic implementations, and performance characteristics of protocols designed for secure data transmission in adversarial environments.
 
@@ -30,7 +30,7 @@ This study provides a systematic, neutral evaluation of network resilience techn
 - **Protocol Architecture Analysis:** Examination of cryptographic handshakes, transport-layer obfuscation, and compliance with IETF standards (e.g., QUIC, TLS 1.3).
 - **Controlled Environment Testing:** Performance benchmarks (throughput, latency, resource utilization) conducted in virtualized networks simulating generic adversarial conditions, such as packet loss and latency variance.
 
-## Table of Contents
+#### Table of Contents
 
 1. [Introduction](#introduction)
 2. [Methodology](#methodology)
@@ -88,7 +88,7 @@ This study provides a systematic, neutral evaluation of network resilience techn
     - [Appendix A: Configuration Templates](#configuration-templates)
     - [Appendix B: Performance Benchmarks](#performance-benchmarks)
 
-## 1. Introduction <a name="introduction"></a>
+#### 1. Introduction <a name="introduction"></a>
 
 Modern deep packet inspection (DPI) systems employ multiple detection methodologies including protocol fingerprinting, traffic pattern analysis, and behavioral heuristics. This technical arms race has catalyzed the development of advanced protocols that employ encryption, obfuscation, and protocol tunneling techniques to preserve network accessibility.
 
@@ -102,7 +102,7 @@ This document provides a systematic analysis of contemporary technologies with e
 
 The primary objective is to establish an evidence-based framework for evaluating and implementing circumvention technologies based on specific technical requirements and threat models.
 
-## 2. Methodology <a name="methodology"></a>
+#### 2. Methodology <a name="methodology"></a>
 
 This analysis employs a multi-faceted methodology to evaluate circumvention technologies:
 
@@ -118,9 +118,9 @@ This analysis employs a multi-faceted methodology to evaluate circumvention tech
 
 Performance metrics were gathered using standardized testing tools including iperf3, ping, traceroute, and custom traffic analysis scripts. All tests were performed across multiple geographic regions to account for network path variations.
 
-## 3. Core Circumvention Protocols <a name="core-circumvention-protocols"></a>
+#### 3. Core Circumvention Protocols <a name="core-circumvention-protocols"></a>
 
-### 3.1 V2Ray/V2Fly Ecosystem <a name="v2rayv2fly-ecosystem"></a>
+##### 3.1 V2Ray/V2Fly Ecosystem <a name="v2rayv2fly-ecosystem"></a>
 
 V2Ray represents a modular platform rather than a single protocol, supporting multiple transport protocols and encryption methods. The architecture employs a core-and-plugin design facilitating adaptation to evolving network environments.
 
@@ -272,7 +272,7 @@ pacman -S v2ray
 - V2RayN (Windows): [https://github.com/2dust/v2rayN](https://github.com/2dust/v2rayN)
 - V2RayNG (Android): [https://github.com/2dust/v2rayNG](https://github.com/2dust/v2rayNG)
 
-### 3.2 XRay and XTLS Technology <a name="xray-and-xtls-technology"></a>
+##### 3.2 XRay and XTLS Technology <a name="xray-and-xtls-technology"></a>
 
 XRay is a fork of V2Ray that introduces significant performance optimizations and enhanced features, most notably the XTLS protocol extension.
 
@@ -423,7 +423,7 @@ _(Refer to Appendix A for a more complete VLESS+XTLS+Reality server example)_
 - XRay Documentation: [https://xtls.github.io/](https://xtls.github.io/)
 - XTLS Protocol Specification: [https://github.com/XTLS/Xray-core/discussions/56](https://github.com/XTLS/Xray-core/discussions/56) (and subsequent Reality discussions)
 
-### 3.3 Shadowsocks Protocol Family <a name="shadowsocks-protocol-family"></a>
+##### 3.3 Shadowsocks Protocol Family <a name="shadowsocks-protocol-family"></a>
 
 Shadowsocks represents one of the most established circumvention protocols, with widespread adoption and multiple implementation variants.
 
@@ -555,7 +555,7 @@ pacman -S shadowsocks-libev
 - Shadowsocks Android: [https://github.com/shadowsocks/shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android)
 - Shadowsocks Organization (SIPs, specs): [https://github.com/shadowsocks/shadowsocks-org](https://github.com/shadowsocks/shadowsocks-org)
 
-### 3.4 Trojan Protocol <a name="trojan-protocol"></a>
+##### 3.4 Trojan Protocol <a name="trojan-protocol"></a>
 
 Trojan represents a minimalist approach to circumvention, designed specifically to mimic HTTPS traffic as closely as possible.
 
@@ -689,7 +689,7 @@ brew install trojan-go
 - Trojan-Go (Go): [https://github.com/p4gefau1t/trojan-go](https://github.com/p4gefau1t/trojan-go)
 - Igniter (Android Trojan client): [https://github.com/trojan-gfw/igniter](https://github.com/trojan-gfw/igniter) (may be less maintained, prefer multi-protocol clients)
 
-### 3.5 WireGuard-based Solutions <a name="wireguard-based-solutions"></a>
+##### 3.5 WireGuard-based Solutions <a name="wireguard-based-solutions"></a>
 
 WireGuard represents a modern approach to VPN technology with superior performance characteristics, though with limited inherent obfuscation capabilities for bypassing DPI.
 
@@ -813,7 +813,7 @@ PersistentKeepalive = 25 # Optional, helps with NAT traversal
 - BoringTun (Cloudflare's Rust implementation): [https://github.com/cloudflare/boringtun](https://github.com/cloudflare/boringtun)
 - WGCF (WARP config generator): [https://github.com/ViRb3/wgcf](https://github.com/ViRb3/wgcf)
 
-### 3.6 Hysteria/Hysteria2 <a name="hysteriahysteria2"></a>
+##### 3.6 Hysteria/Hysteria2 <a name="hysteriahysteria2"></a>
 
 Hysteria represents a novel approach to circumvention technology built on the QUIC protocol with advanced congestion control and obfuscation. Hysteria2 is the current iteration, a significant rewrite and improvement over Hysteria 1.
 
@@ -950,7 +950,7 @@ bandwidth:
 - Hysteria Project (Hysteria2 is the main focus): [https://github.com/apernet/hysteria](https://github.com/apernet/hysteria)
 - Hysteria2 Documentation: [https://v2.hysteria.network/](https://v2.hysteria.network/) (or linked from GitHub)
 
-### 3.7 TUIC Protocol <a name="tuic-protocol"></a>
+##### 3.7 TUIC Protocol <a name="tuic-protocol"></a>
 
 TUIC (TUI Claw) is another QUIC-based tunnel protocol designed for high-performance, low latency, and detection resistance. It shares some philosophical similarities with Hysteria but has its own distinct implementation and features.
 
@@ -1082,7 +1082,7 @@ Similar to Hysteria2, its reliance on UDP means it can be affected by blanket UD
 - TUIC Project: [https://github.com/EAimTY/tuic](https://github.com/EAimTY/tuic)
 - TUIC Protocol Specifications (often in docs or discussions within the repo)
 
-### 3.8 Outline <a name="outline"></a>
+##### 3.8 Outline <a name="outline"></a>
 
 Outline is an open-source project developed by Jigsaw (a unit within Google) designed for ease of deployment and management of Shadowsocks servers, making it accessible for individuals and organizations to run their own VPN-like services.
 
@@ -1158,7 +1158,7 @@ Outline provides solid performance, characteristic of a well-implemented Shadows
 - Outline Server (Shadowsocks and management service): [https://github.com/Jigsaw-Code/outline-server](https://github.com/Jigsaw-Code/outline-server)
 - Outline SS-Server (core Shadowsocks component): [https://github.com/Jigsaw-Code/outline-ss-server](https://github.com/Jigsaw-Code/outline-ss-server)
 
-### 3.9 Comparative Protocol Analysis <a name="comparative-protocol-analysis"></a>
+##### 3.9 Comparative Protocol Analysis <a name="comparative-protocol-analysis"></a>
 
 This section provides a systematic comparison of the major circumvention protocols based on empirical testing and technical analysis, focusing on their state in 2025.
 
@@ -1211,11 +1211,11 @@ This section provides a systematic comparison of the major circumvention protoco
 
 This comparative analysis underscores that no single protocol is universally "best." The optimal choice depends on a nuanced understanding of the specific operational environment, threat model, and desired trade-offs between resistance, performance, and usability. An adaptive strategy, often involving multiple protocols and configurations, is generally the most robust approach to censorship circumvention in 2025.
 
-## 4. Cross-Platform Implementation Analysis <a name="cross-platform-implementation-analysis"></a>
+#### 4. Cross-Platform Implementation Analysis <a name="cross-platform-implementation-analysis"></a>
 
 This section details notable client software available for managing and utilizing the discussed circumvention protocols across various operating systems. The focus is on clients that are actively maintained, widely used, and support modern protocol features as of 2025. (Refer to Section 8 for a summary of "best" overall client solutions).
 
-### 4.1 Windows Client Solutions <a name="windows-client-solutions"></a>
+##### 4.1 Windows Client Solutions <a name="windows-client-solutions"></a>
 
 Windows offers a wide range of client implementations for circumvention protocols.
 
@@ -1237,7 +1237,7 @@ _ Clash Nyanpasu: [https://github.com/LibNyanpasu/clash-nyanpasu](https://github
 
 **3. WireGuard for Windows** \* _Protocols_: WireGuard. \* _Installation_: Official website: [https://www.wireguard.com/install/](https://www.wireguard.com/install/) \* _Commentary_: Official, high-performance client. Remember, needs obfuscation for censorship circumvention.
 
-### 4.2 macOS Client Solutions <a name="macos-client-solutions"></a>
+##### 4.2 macOS Client Solutions <a name="macos-client-solutions"></a>
 
 macOS users have access to several high-quality GUI clients.
 
@@ -1259,7 +1259,7 @@ macOS users have access to several high-quality GUI clients.
 
 **2. WireGuard for macOS** \* _Protocols_: WireGuard. \* _Installation_: App Store or [https://www.wireguard.com/install/](https://www.wireguard.com/install/). \* _Commentary_: Official client.
 
-### 4.3 Linux Client Solutions <a name="linux-client-solutions"></a>
+##### 4.3 Linux Client Solutions <a name="linux-client-solutions"></a>
 
 Linux users benefit from powerful CLI tools and increasingly capable GUI clients.
 
@@ -1286,7 +1286,7 @@ The primary CLI tools are the cores themselves:
 
 These are typically run as services (e.g., via systemd) and provide SOCKS5/HTTP listeners for applications to use.
 
-### 4.4 Android Client Solutions <a name="android-client-solutions"></a>
+##### 4.4 Android Client Solutions <a name="android-client-solutions"></a>
 
 Android has a vibrant ecosystem of powerful circumvention clients.
 
@@ -1308,7 +1308,7 @@ _ CFMA (MetaCubeX, more active): [https://github.com/MetaCubeX/ClashMetaForAndro
 
 **2. WireGuard for Android** \* _Protocols_: WireGuard. \* _Installation_: Google Play, F-Droid, or official website. \* _Commentary_: Official client.
 
-### 4.5 iOS Client Solutions <a name="ios-client-solutions"></a>
+##### 4.5 iOS Client Solutions <a name="ios-client-solutions"></a>
 
 iOS client options are primarily available through the App Store and are often paid due to Apple's policies and the complexity of NetworkExtension development.
 
@@ -1332,11 +1332,11 @@ iOS client options are primarily available through the App Store and are often p
 
 **Note on iOS Clients**: Due to App Store review processes and NetworkExtension limitations, features and protocol support can sometimes change, or apps might be temporarily unavailable. Always check recent reviews and app update history.
 
-## 5. Server-Side Considerations <a name="server-side-considerations"></a>
+#### 5. Server-Side Considerations <a name="server-side-considerations"></a>
 
 Effective server deployment is critical for circumvention system performance, reliability, and discretion.
 
-### 5.1 Server Hosting Recommendations <a name="server-hosting-recommendations"></a>
+##### 5.1 Server Hosting Recommendations <a name="server-hosting-recommendations"></a>
 
 Selection of a hosting provider and server location significantly impacts the utility of a circumvention server.
 
@@ -1423,7 +1423,7 @@ _ OVHcloud / SoYouStart / Kimsufi (France/Canada/Global, wide range of options) 
 
 **Testing is Key**: Use tools like `ping`, `mtr`, and speed tests from the user's perspective to candidate server locations before committing.
 
-### 5.2 Domain Fronting Techniques <a name="domain-fronting-techniques"></a>
+##### 5.2 Domain Fronting Techniques <a name="domain-fronting-techniques"></a>
 
 Domain fronting leverages trusted, high-reputation domains (often CDNs) to obscure the true destination of circumvention traffic. The idea is that censors are unwilling to block these major domains entirely.
 
@@ -1509,7 +1509,7 @@ server {
 - **Gcore CDN**: Another option with global presence.
 - _Others_: AWS CloudFront, Azure CDN, Fastly (can be more expensive or complex).
 
-### 5.3 CDN Integration Methodologies <a name="cdn-integration-methodologies"></a>
+##### 5.3 CDN Integration Methodologies <a name="cdn-integration-methodologies"></a>
 
 CDN integration, as described above, provides performance benefits (caching, closer edge nodes) and significant detection resistance by masking the origin server's IP address and making traffic appear to originate from/destinate to benign CDN IPs.
 
@@ -1577,11 +1577,11 @@ Protocols that can be transported over WebSocket and then encapsulated in TLS ar
 - **Performance Overhead**: CDNs add at least one more hop. While edge caching can improve static content delivery, for dynamic proxy traffic, it can introduce minor latency. Choose CDN edge locations wisely.
 - **TLS Certificate Mismatches**: Ensure certificates are valid and correctly configured on both the origin and the CDN to avoid errors or security warnings.
 
-## 6. Advanced Circumvention Techniques <a name="advanced-circumvention-techniques"></a>
+#### 6. Advanced Circumvention Techniques <a name="advanced-circumvention-techniques"></a>
 
 Beyond standard protocol deployments, several advanced techniques enhance resilience against sophisticated censorship.
 
-### 6.1 Bridge-based Systems <a name="bridge-based-systems"></a>
+##### 6.1 Bridge-based Systems <a name="bridge-based-systems"></a>
 
 Bridge-based systems act as unlisted entry points to a censorship circumvention network, making it harder for censors to block all access points. The Tor network's use of bridges is a prime example.
 
@@ -1617,7 +1617,7 @@ While Tor formalizes the bridge concept, one can apply similar principles to oth
 - **Performance**: The additional layers of obfuscation and indirection (especially for meek) can impact performance.
 - **Trust**: Users must trust the bridge operator. For Tor, the bridge only sees encrypted Tor traffic; for other protocols, the bridge might be the first hop decrypting user traffic.
 
-### 6.2 Snowflake and WebRTC Implementations <a name="snowflake-and-webrtc-implementations"></a>
+##### 6.2 Snowflake and WebRTC Implementations <a name="snowflake-and-webrtc-implementations"></a>
 
 Snowflake is a pluggable transport for Tor that utilizes a large pool of ephemeral WebRTC proxies, often run by volunteers in their web browsers or as standalone proxies.
 
@@ -1660,7 +1660,7 @@ Snowflake is a pluggable transport for Tor that utilizes a large pool of ephemer
 - **Snowflake GitHub**: [https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake](https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake) (client, proxy, broker code)
 - **WebRTC Specification**: [https://www.w3.org/TR/webrtc/](https://www.w3.org/TR/webrtc/)
 
-### 6.3 Multi-hop Configurations <a name="multi-hop-configurations"></a>
+##### 6.3 Multi-hop Configurations <a name="multi-hop-configurations"></a>
 
 Multi-hop configurations involve routing traffic through multiple proxy servers before reaching the final destination. This can enhance anonymity (by separating entry and exit points) and potentially bypass certain geo-restrictions or blocking mechanisms that target single exit nodes.
 
@@ -1737,7 +1737,7 @@ Many advanced clients support proxy chaining:
 - **Cost**: Operating or using multiple proxy servers is generally more expensive.
 - **Trust**: Requires trust in each operator in the chain, as each could potentially log traffic (though end-to-end encryption to the _final_ destination is still the goal if the application layer uses HTTPS).
 
-### 6.4 Pliable Transports and Pluggable Transports (General) <a name="pliable-transports"></a>
+##### 6.4 Pliable Transports and Pluggable Transports (General) <a name="pliable-transports"></a>
 
 Pluggable Transports (PTs) are a general concept, formalized by the Tor Project but applicable more broadly, for modular systems that transform network traffic flow between a client and a server. The goal is to make the traffic difficult for censors to identify, classify, and block. "Pliable" transports often imply an ability to adapt or change characteristics.
 
@@ -1786,11 +1786,11 @@ Pluggable Transports (PTs) are a general concept, formalized by the Tor Project 
 - **Ease of Use & Configuration**: Some PTs can be complex to configure correctly, potentially leading to security vulnerabilities if misconfigured.
 - **Interoperability**: Ensuring compatibility between client and server implementations of a PT is crucial.
 
-## 7. Novel Research Developments and Future Trends <a name="novel-research-developments"></a>
+#### 7. Novel Research Developments and Future Trends <a name="novel-research-developments"></a>
 
 The field of censorship circumvention is dynamic, with ongoing research and development efforts to counter evolving censorship mechanisms. This section explores some key areas of innovation and future trends expected to shape the landscape around 2025 and beyond.
 
-### 7.1 AI/ML in Censorship and Circumvention <a name="ai-ml-censorship-circumvention"></a>
+##### 7.1 AI/ML in Censorship and Circumvention <a name="ai-ml-censorship-circumvention"></a>
 
 Artificial Intelligence (AI) and Machine Learning (ML) are increasingly being employed on both sides of the censorship arms race, leading to more sophisticated detection and evasion techniques.
 
@@ -1812,7 +1812,7 @@ Artificial Intelligence (AI) and Machine Learning (ML) are increasingly being em
 **Challenges & Outlook (2025)**:
 While AI/ML-based censorship is a growing threat, its widespread, highly effective deployment is still hampered by the need for large, accurate training datasets and significant computational resources. On the circumvention side, AI/ML techniques are more in the research and early adoption phase, with tools like `sing-box` beginning to incorporate more dynamic features (e.g., uTLS fingerprint cycling) that are precursors to more adaptive behaviors. The "cat and mouse" game will increasingly involve AI/ML on both sides.
 
-### 7.2 Transport Layer Innovations Beyond QUIC <a name="transport-layer-innovations-beyond-quic"></a>
+##### 7.2 Transport Layer Innovations Beyond QUIC <a name="transport-layer-innovations-beyond-quic"></a>
 
 While QUIC (as used by Hysteria2, TUIC) has provided significant advantages in performance and flexibility, research continues into novel transport layer mechanisms and approaches to make circumvention traffic more resilient and less detectable.
 
@@ -1832,7 +1832,7 @@ While QUIC (as used by Hysteria2, TUIC) has provided significant advantages in p
   - _Impact_: If widely adopted by servers and CDNs, ECH could significantly enhance privacy and make SNI-based blocking ineffective. Circumvention tools could leverage this by connecting to ECH-enabled front domains. Cloudflare and others are actively deploying ECH.
   - _Outlook for 2025_: Adoption is growing. Circumvention tools will increasingly look to leverage ECH where available. This could make direct connections to servers (if ECH-enabled) more viable or enhance CDN-based methods.
 
-### 7.3 Post-Quantum Cryptography Considerations <a name="post-quantum-considerations"></a>
+##### 7.3 Post-Quantum Cryptography Considerations <a name="post-quantum-considerations"></a>
 
 With the anticipated advent of cryptographically relevant quantum computers (CRQCs), the security of currently used public-key cryptography (RSA, ECC, Diffie-Hellman) is threatened by Shor's algorithm. Symmetric cryptography (like AES) is considered more resilient, requiring larger key sizes.
 
@@ -1850,7 +1850,7 @@ With the anticipated advent of cryptographically relevant quantum computers (CRQ
   - For circumvention, the immediate concern is less about quantum decryption of real-time proxy sessions and more about the HNDL threat to any sensitive data passed through these tunnels if the underlying application layer encryption is also vulnerable.
 - **Open Quantum Safe (OQS) Project**: Provides open-source libraries for PQC algorithms and integrations into OpenSSL and other libraries, facilitating experimentation and adoption. ([https://openquantumsafe.org/](https://openquantumsafe.org/))
 
-### 7.4 Decentralized and P2P Approaches <a name="decentralized-p2p-approaches"></a>
+##### 7.4 Decentralized and P2P Approaches <a name="decentralized-p2p-approaches"></a>
 
 Decentralized systems aim to eliminate single points of failure and control, making them inherently more resilient to censorship by distributing trust and infrastructure.
 
@@ -1887,11 +1887,11 @@ Decentralized systems aim to eliminate single points of failure and control, mak
 
 **Overall Challenges for Decentralized Approaches**: Usability for non-technical users, ensuring robust anonymity guarantees in a P2P context, managing trust in decentralized node operators, achieving consistent performance, and developing sustainable economic models (for dVPNs) remain active areas of research and development.
 
-## 8. Optimal Client Solutions for Multi-Protocol Management (2025) <a name="optimal-client-solutions"></a>
+#### 8. Optimal Client Solutions for Multi-Protocol Management (2025) <a name="optimal-client-solutions"></a>
 
 The proliferation of circumvention protocols necessitates client applications capable of managing multiple protocols and configurations efficiently. The "best" solution often depends on the user's technical proficiency, platform, and specific needs. This section identifies leading clients as of 2025.
 
-### 8.1 Criteria for Evaluation <a name="criteria-for-evaluation-clients"></a>
+##### 8.1 Criteria for Evaluation <a name="criteria-for-evaluation-clients"></a>
 
 1. **Protocol Support**: Breadth (number of different protocols) and depth (support for advanced features like XTLS/Reality, SS-2022, Hysteria2/TUIC options) of supported protocols.
 2. **Platform Availability**: Native or well-performing clients for Windows, macOS, Linux, Android, iOS.
@@ -1904,7 +1904,7 @@ The proliferation of circumvention protocols necessitates client applications ca
 9. **Open Source and Community Support**: Availability of source code (promotes trust and auditability), active development, responsive maintainers, community forums for support.
 10. **Core Engine Integration**: Use of up-to-date, reputable, and powerful underlying proxy engines (e.g., Xray-core, sing-box, Clash.Meta).
 
-### 8.2 GUI Solutions <a name="gui-solutions"></a>
+##### 8.2 GUI Solutions <a name="gui-solutions"></a>
 
 Graphical User Interface clients are generally preferred for ease of use by a broad range of users.
 
@@ -1979,7 +1979,7 @@ Graphical User Interface clients are generally preferred for ease of use by a br
    - _Commentary_: Solid and reliable choice, especially if primarily using V2Ray/Xray.
    - _GitHub_: [https://github.com/2dust/v2rayNG](https://github.com/2dust/v2rayNG)
 
-### 8.3 CLI Solutions <a name="cli-solutions"></a>
+##### 8.3 CLI Solutions <a name="cli-solutions"></a>
 
 Command-Line Interface clients are favored by advanced users, for server deployments, headless operation, or for automated scripting. These are often the core engines themselves.
 
@@ -2011,7 +2011,7 @@ Command-Line Interface clients are favored by advanced users, for server deploym
 
 _(Other CLIs like `shadowsocks-libev`, `trojan-go`, Hysteria2/TUIC CLIs are also excellent for their specific protocols but `sing-box`, `Xray-core`, and `Clash.Meta` offer broader multi-protocol CLI capabilities)._
 
-### 8.4 TUI Solutions <a name="tui-solutions"></a>
+##### 8.4 TUI Solutions <a name="tui-solutions"></a>
 
 Text-based User Interface clients offer a middle ground, providing interactivity in terminal environments, useful for headless servers or users who prefer terminal-based management.
 
@@ -2037,7 +2037,7 @@ Text-based User Interface clients offer a middle ground, providing interactivity
 
 _The dedicated TUI application landscape for these specific multi-protocol tools is less mature compared to GUI or pure CLI. Users often rely on web dashboards run locally or script their own interactions._
 
-### 8.5 Platform-Specific Recommendations Summary (2025 Best Overall)
+##### 8.5 Platform-Specific Recommendations Summary (2025 Best Overall)
 
 - **Windows (GUI)**: **Clash Verge / Nyanpasu** (for advanced rules & Clash ecosystem) or **NekoRay** (for `sing-box` versatility & broad protocol support). **v2rayN** remains a solid, simpler choice for V2Ray/Xray.
 - **macOS (GUI)**: **Clash Verge / Nyanpasu** or **Stash** (for Clash ecosystem). **NekoRay** (for `sing-box`). **Surge** (paid) for ultimate power users.
@@ -2049,11 +2049,11 @@ _The dedicated TUI application landscape for these specific multi-protocol tools
 **Overall "Best" Solution Approach**:
 For users seeking a unified experience across multiple platforms with the widest protocol support and advanced features, solutions based on **`sing-box` (e.g., NekoRay/NekoBox)** or **Clash.Meta (e.g., Clash Verge/Nyanpasu, Stash, CFMA)** are generally the top contenders in 2025. For CLI power users, `sing-box` itself stands out for its sheer breadth of capabilities. The choice often comes down to preference for configuration style (JSON for `sing-box`/Xray vs. YAML for Clash) and specific feature requirements.
 
-## 9. Protocol Efficacy and Primacy in Circumvention (2025) <a name="protocol-efficacy-primacy"></a>
+#### 9. Protocol Efficacy and Primacy in Circumvention (2025) <a name="protocol-efficacy-primacy"></a>
 
 Determining the "best" protocol for bypassing blocking is highly context-dependent, relying on the specific threat model, network environment, performance requirements, and the sophistication of the censorship regime being faced. No single protocol is universally superior in all situations.
 
-### 9.1 Factors Determining "Best" Protocol <a name="factors-determining-best-protocol"></a>
+##### 9.1 Factors Determining "Best" Protocol <a name="factors-determining-best-protocol"></a>
 
 1. **Resistance to DPI (Passive & Active)**:
    - **Passive Fingerprinting**: How well the protocol avoids having a unique, identifiable signature in its traffic flow (e.g., specific byte patterns, packet size sequences, handshake characteristics).
@@ -2074,7 +2074,7 @@ Determining the "best" protocol for bypassing blocking is highly context-depende
    - Compatibility with CDNs.
 7. **Active Development & Community Support**: A protocol that is actively maintained and improved is more likely to adapt to new censorship techniques.
 
-### 9.2 Current Leading Protocols by Use Case (as of 2025) <a name="current-leading-protocols-by-use-case"></a>
+##### 9.2 Current Leading Protocols by Use Case (as of 2025) <a name="current-leading-protocols-by-use-case"></a>
 
 Based on the analyses in Section 3 and ongoing observations of the censorship landscape:
 
@@ -2119,7 +2119,7 @@ Based on the analyses in Section 3 and ongoing observations of the censorship la
    - **OpenVPN (standalone)**: Also has known fingerprints, though obfuscation techniques exist (e.g., via stunnel, obfsproxy, or XOR patch).
    - **Plain SOCKS5/HTTP proxies**: Unencrypted, easily blocked.
 
-### 9.3 Recommendation for General Purpose High-Resistance Circumvention (2025) <a name="recommendation-general-purpose"></a>
+##### 9.3 Recommendation for General Purpose High-Resistance Circumvention (2025) <a name="recommendation-general-purpose"></a>
 
 **As of 2025, for users seeking a primary protocol that balances the highest levels of resistance to sophisticated censorship, excellent performance, and reasonable usability (with appropriate clients), the combination of VLESS + XTLS + Reality (via Xray-core) is considered the leading choice.**
 
@@ -2138,11 +2138,11 @@ Based on the analyses in Section 3 and ongoing observations of the censorship la
 
 **Crucial Caveat**: The censorship landscape is dynamic. What is "best" today might be less effective tomorrow. Continuous monitoring of community discussions, research, and regional blocking patterns is essential. A multi-layered strategy, involving knowledge of and access to several strong protocols and configurations, offers the most robust long-term approach to maintaining network freedom.
 
-## 10. Deployment Recommendations and Best Practices <a name="deployment-recommendations"></a>
+#### 10. Deployment Recommendations and Best Practices <a name="deployment-recommendations"></a>
 
 Effective circumvention is not solely about choosing the right protocol or client; it also involves strategic deployment and operational security (OpSec) for both users and server operators.
 
-### 10.1 Tiered Approach Framework <a name="tiered-approach-framework"></a>
+##### 10.1 Tiered Approach Framework <a name="tiered-approach-framework"></a>
 
 A tiered approach involves selecting circumvention methods based on the perceived risk, the sophistication of the censorship in a given region, network conditions, and the sensitivity of the activity.
 
@@ -2169,7 +2169,7 @@ A tiered approach involves selecting circumvention methods based on the perceive
   - _Goal_: Strong anonymity in addition to robust circumvention.
   - _Considerations_: Significant performance impact, high complexity, deep understanding of anonymity networks and OpSec required. This tier is primarily for users whose safety or security depends on anonymity.
 
-### 10.2 Region-Specific Optimizations <a name="region-specific-optimizations"></a>
+##### 10.2 Region-Specific Optimizations <a name="region-specific-optimizations"></a>
 
 Censorship mechanisms and network conditions vary significantly by region, necessitating tailored circumvention strategies.
 
@@ -2207,7 +2207,7 @@ Censorship mechanisms and network conditions vary significantly by region, neces
 **Intelligence Gathering**:
 Monitoring local forums, news, social media, and reports from users in specific regions is crucial for understanding current censorship tactics and effective countermeasures. Projects like OONI (Open Observatory of Network Interference - [https://ooni.org/](https://ooni.org/)) provide valuable data on global censorship events and blocked services/protocols.
 
-### 10.3 Operational Security (OpSec) for Users and Operators <a name="opsec-users-operators"></a>
+##### 10.3 Operational Security (OpSec) for Users and Operators <a name="opsec-users-operators"></a>
 
 Strong OpSec is vital for both users of circumvention tools and operators of circumvention servers to protect their privacy, security, and the viability of the circumvention methods.
 
@@ -2241,11 +2241,11 @@ Strong OpSec is vital for both users of circumvention tools and operators of cir
 8. **Legal Compliance (Host Country & Provider ToS)**: Understand and comply with the terms of service of the hosting provider and the laws of the country where the server is located. Avoid hosting illegal content or facilitating illegal activities.
 9. **Separate Infrastructure**: If running multiple services, consider isolating circumvention servers from other personal or critical infrastructure.
 
-## 11. Key Open Source Resources and Communities <a name="key-open-source-resources"></a>
+#### 11. Key Open Source Resources and Communities <a name="key-open-source-resources"></a>
 
 Access to up-to-date information, software, and community support is essential in the rapidly evolving field of censorship circumvention.
 
-### 11.1 Aggregated Project Repositories and Key Software Links <a name="aggregated-project-repositories"></a>
+##### 11.1 Aggregated Project Repositories and Key Software Links <a name="aggregated-project-repositories"></a>
 
 While individual project GitHub repositories have been linked throughout this document, some aggregators or key starting points include:
 
@@ -2269,7 +2269,7 @@ While individual project GitHub repositories have been linked throughout this do
 - **TUIC Project**:
   - Core Project: [https://github.com/EAimTY/tuic](https://github.com/EAimTY/tuic)
 
-### 11.2 Community Forums and Discussion Platforms <a name="community-forums"></a>
+##### 11.2 Community Forums and Discussion Platforms <a name="community-forums"></a>
 
 Staying updated with the latest developments, techniques, and censorship events often relies on community participation.
 
@@ -2293,7 +2293,7 @@ Staying updated with the latest developments, techniques, and censorship events 
     _Proceedings from these conferences are valuable resources for understanding the research frontier._
 - **OONI (Open Observatory of Network Interference)**: Provides data and reports on internet censorship worldwide. Useful for understanding what is being blocked and where. ([https://ooni.org/](https://ooni.org/))
 
-### 11.3 Sources for Free Configurations (Caution Advised) <a name="sources-free-configurations"></a>
+##### 11.3 Sources for Free Configurations (Caution Advised) <a name="sources-free-configurations"></a>
 
 While tempting for users who cannot set up their own servers, using free, publicly shared configurations for protocols like V2Ray, Trojan, Shadowsocks, etc., comes with **significant security, privacy, and reliability risks.**
 
@@ -2331,7 +2331,7 @@ While tempting for users who cannot set up their own servers, using free, public
 
 Self-hosting a basic server on a reputable VPS provider can cost as little as $3-5 USD per month and offers vastly superior security, privacy, performance, and reliability compared to relying on dubious free configurations.
 
-## 12. Conclusion <a name="conclusion"></a>
+#### 12. Conclusion <a name="conclusion"></a>
 
 The landscape of network censorship and circumvention in 2025 is characterized by a continuous technological arms race. Sophisticated DPI, AI-driven traffic analysis, and widespread blocking necessitate equally advanced and adaptable circumvention tools. This analysis has systematically reviewed the core protocols—V2Ray/V2Fly, XRay, Shadowsocks, Trojan, WireGuard-based solutions, Hysteria2, and TUIC—along with their implementations across major platforms.
 
@@ -2345,7 +2345,7 @@ Effective circumvention, however, extends beyond mere technological choices. A t
 
 The open-source nature of most leading circumvention tools, coupled with active global communities, ensures rapid evolution and adaptation. Researchers, developers, and users must remain vigilant, continually evaluating the threat landscape and adapting their strategies and toolsets. This document serves as a snapshot of the state-of-the-art in 2025, recognizing that the pursuit of network freedom is an ongoing endeavor requiring persistent innovation, collaboration, and a commitment to user safety and privacy.
 
-## 13. References <a name="references"></a>
+#### 13. References <a name="references"></a>
 
 _(This section would typically contain a comprehensive list of academic papers, technical specifications, RFCs, project documentation, and other citable sources. For the purpose of this generated document, explicit references have been embedded as URLs where appropriate, or are implicitly covered by the linked GitHub repositories and official project websites. A formal dissertation would require detailed citations for all claims and data.)_
 
@@ -2359,9 +2359,9 @@ _(This section would typically contain a comprehensive list of academic papers, 
 6. NIST. (2022-2024). _Post-Quantum Cryptography Standardization Project Updates_. National Institute of Standards and Technology. Retrieved from [https://csrc.nist.gov/Projects/post-quantum-cryptography](https://csrc.nist.gov/Projects/post-quantum-cryptography).
 7. Open Observatory of Network Interference (OONI). (2025). _OONI Data and Reports_. Retrieved from [https://ooni.org/](https://ooni.org/).
 
-## 14. Appendices <a name="appendices"></a>
+#### 14. Appendices <a name="appendices"></a>
 
-### Appendix A: Configuration Templates <a name="configuration-templates"></a>
+##### Appendix A: Configuration Templates <a name="configuration-templates"></a>
 
 _(This appendix would provide example configuration files for various server setups and client profiles for the discussed protocols. Examples have been provided inline in relevant sections for brevity but could be consolidated and expanded here.)_
 
@@ -2621,7 +2621,7 @@ This example shows a sing-box client configuration that listens as a SOCKS and T
 }
 ```
 
-### Appendix B: Performance Benchmarks <a name="performance-benchmarks"></a>
+##### Appendix B: Performance Benchmarks <a name="performance-benchmarks"></a>
 
 This appendix outlines the methodology and presents illustrative examples of performance benchmarks comparing circumvention protocols. The benchmarks evaluate throughput, latency, CPU utilization, and stability under varying network conditions.
 

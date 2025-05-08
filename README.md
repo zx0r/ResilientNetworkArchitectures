@@ -100,7 +100,7 @@ This document provides a systematic analysis of contemporary technologies with e
 4. Performance metrics under varying network conditions
 5. Resistance to advanced detection mechanisms
 
-The primary objective is to establish an evidence-based framework for evaluating and implementing circumvention technologies based on specific technical requirements and threat models.
+The primary objective is to establish an evidence-based framework for evaluating and implementing technologies based on specific technical requirements and threat models.
 
 #### 2. Methodology <a name="methodology"></a>
 

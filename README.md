@@ -17,9 +17,9 @@
 </small>
 
 <div align="center">
-<h1>Resilient Network Architectures<h3>
-<h2>  Analysis of Secure Communication Protocols in Adversarial Environments<h4>
-<h3>Technical Architectures, Implementation Methodologies, and Empirical Efficacy Analysis</h5>
+<h2>Resilient Network Architectures<h3>
+<h3>  Analysis of Secure Communication Protocols in Adversarial Environments<h4>
+<h4>Technical Architectures, Implementation Methodologies, and Empirical Efficacy Analysis</h5>
 </div>
 
 ### Abstract

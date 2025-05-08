@@ -14,7 +14,7 @@
 
 </small>
 
-### Resilient Network Architectures: Analysis of Secure Communication Protocols in Adversarial Environments
+#### Resilient Network Architectures: Analysis of Secure Communication Protocols in Adversarial Environments
 
 <div align="center">
 <h3>A Systematic Review of Contemporary Network Technologies</h2>

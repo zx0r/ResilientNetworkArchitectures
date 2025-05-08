@@ -693,7 +693,7 @@ brew install trojan-go
 
 ##### 3.5 WireGuard-based Solutions <a name="wireguard-based-solutions"></a>
 
-WireGuard represents a modern approach to VPN technology with superior performance characteristics, though with limited inherent obfuscation capabilities for bypassing DPI.
+WireGuard represents a modern approach to VPN technology with superior performance characteristics, though with limited inherent obfuscation capabilities for DPI.
 
 ###### Technical Architecture
 
@@ -1347,7 +1347,7 @@ Selection of a hosting provider and server location significantly impacts the ut
 **Technical Considerations**:
 
 - **Network Quality**: Low latency to target users, high bandwidth allocation, good peering (especially to residential ISPs in the users' region).
-- **Geographic Location**: Strategic placement to minimize latency and bypass geo-restrictions.
+- **Geographic Location**: Strategic placement to minimize latency and geo-restrictions.
 - **IP Address Reputation**: Prefer providers with clean IP ranges not already associated with abuse or VPNs.
 - **DDoS Protection**: Basic protection is often included; advanced protection might be necessary for high-profile servers.
 - **Virtualization Technology**: KVM is generally preferred over OpenVZ for better resource isolation and kernel control.
@@ -1661,7 +1661,7 @@ Snowflake is a pluggable transport for Tor that utilizes a large pool of ephemer
 
 ##### 6.3 Multi-hop Configurations <a name="multi-hop-configurations"></a>
 
-Multi-hop configurations involve routing traffic through multiple proxy servers before reaching the final destination. This can enhance anonymity (by separating entry and exit points) and potentially bypass certain geo-restrictions or blocking mechanisms that target single exit nodes.
+Multi-hop configurations involve routing traffic through multiple proxy servers before reaching the final destination. This can enhance anonymity (by separating entry and exit points) and potentially certain geo-restrictions or blocking mechanisms that target single exit nodes.
 
 ###### Architecture Variants
 
@@ -1725,7 +1725,7 @@ Many advanced clients support proxy chaining:
 ###### Advantages
 
 - **Increased Anonymity/Privacy**: By separating the entry node (seen by ISP) from the exit node (seen by destination), it makes tracing traffic back to the origin user more difficult.
-- **Bypassing Sophisticated Blocks**: Can circumvent blocks that target specific exit IPs or protocols if intermediate hops are in less restricted regions or use different, unblocked protocols.
+- **Sophisticated Blocks**: Can circumvent blocks that target specific exit IPs or protocols if intermediate hops are in less restricted regions or use different, unblocked protocols.
 - **Jurisdictional Arbitrage**: Routing data through specific legal jurisdictions to take advantage of differing data protection laws (though effectiveness is complex).
 
 ###### Disadvantages
@@ -1820,7 +1820,7 @@ While QUIC (as used by Hysteria2, TUIC) has provided significant advantages in p
   - Examples from research: Marionette (programmable proxy), SymTCP (transport-layer anomorphism).
 - **Application-Layer Tunneling over Unconventional Channels**:
   - Exploring the use of less common or application-specific protocols as covert channels. Examples include:
-    - **DNS Tunneling**: Encapsulating data within DNS queries and responses (e.g., Iodine, DNS2TCP). Often very slow and easily detectable if heavily used, but can bypass captive portals.
+    - **DNS Tunneling**: Encapsulating data within DNS queries and responses (e.g., Iodine, DNS2TCP). Often very slow and easily detectable if heavily used, but can captive portals.
     - **ICMP Tunneling**: Using ICMP echo requests/replies. Also slow and often blocked.
     - **Covert Channels in Gaming Protocols, VoIP, etc.**: More complex and highly application-specific.
   - _Outlook_: Generally niche and limited by performance and detectability, but can be useful in very restricted scenarios.
@@ -2049,7 +2049,7 @@ For users seeking a unified experience across multiple platforms with the widest
 
 #### 9. Protocol Efficacy and Primacy in secure access architectures (2025) <a name="protocol-efficacy-primacy"></a>
 
-Determining the "best" protocol for bypassing blocking is highly context-dependent, relying on the specific threat model, network environment, performance requirements, and the sophistication of the regime being faced. No single protocol is universally superior in all situations.
+Determining the "best" protocol is highly context-dependent, relying on the specific threat model, network environment, performance requirements, and the sophistication of the regime being faced. No single protocol is universally superior in all situations.
 
 ##### 9.1 Factors Determining "Best" Protocol <a name="factors-determining-best-protocol"></a>
 
@@ -2144,7 +2144,7 @@ Effective secure access architectures is not solely about choosing the right pro
 
 A tiered approach involves selecting secure access architectures methods based on the perceived risk, network conditions, and the sensitivity of the activity.
 
-- **Tier 1: Basic Unblocking & Geo-Restriction Bypass (Low Environments)**
+- **Tier 1: Basic Unblocking & Geo-Restriction (Low Environments)**
 
   - _Methods_: Standard Shadowsocks (AEAD), WireGuard (if UDP is not blocked), reputable commercial VPNs with common protocols (OpenVPN, IKEv2).
   - _Goal_: Basic IP masking, accessing geo-restricted content, general privacy from local ISP.
@@ -2188,7 +2188,7 @@ Mechanisms and network conditions vary significantly by region, necessitating ta
 - **Regions with Bandwidth Throttling or QoS Penalties for Encrypted/Unknown Traffic**:
 
   - **Protocols Resembling Web Traffic**: Anything over WebSocket+TLS. VLESS+XTLS+Reality.
-  - **QUIC-based protocols (Hysteria2, TUIC)**: Can sometimes bypass throttling aimed at TCP, but might also be specifically targeted if QUIC usage is low overall in the region. Test performance.
+  - **QUIC-based protocols (Hysteria2, TUIC)**: Test performance.
   - **Using Common Ports**: Stick to port 443.
   - **Traffic Shaping/Padding**: Some tools offer options to make traffic patterns less suspicious, though this adds overhead.
 

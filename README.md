@@ -186,7 +186,8 @@ scoop install v2rayn
 brew install v2ray
 
 # For GUI clients:
-brew install --cask v2rayx
+# ! (disabled) brew install --cask qv2ray
+curl -fOsSL https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-macOS-x64.dmg
 ```
 
 **Linux Installation**:

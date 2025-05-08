@@ -429,7 +429,7 @@ _(Refer to Appendix A for a more complete VLESS+XTLS+Reality server example)_
 
 Shadowsocks represents one of the most established circumvention protocols, with widespread adoption and multiple implementation variants.
 
-#### Technical Architecture
+###### Technical Architecture
 
 Shadowsocks employs a straightforward design:
 
@@ -438,7 +438,7 @@ Shadowsocks employs a straightforward design:
 - Minimal packet headers
 - Support for multiple encryption algorithms, with AEAD ciphers being standard.
 
-#### Protocol Variants
+###### Protocol Variants
 
 **Original Shadowsocks (Legacy)**:
 
@@ -461,7 +461,7 @@ Shadowsocks employs a straightforward design:
 - Enhanced obfuscation, per-session subkey derivation, and modern AEAD ciphers (e.g., `2022-blake3-aes-128-gcm`).
 - Improved resistance to active probing and replay attacks.
 
-#### Performance Characteristics
+###### Performance Characteristics
 
 Shadowsocks protocols offer excellent performance due to:
 
@@ -469,7 +469,7 @@ Shadowsocks protocols offer excellent performance due to:
 - Efficient encryption implementations
 - Minimal computational overhead
 
-#### Detection Resistance
+###### Detection Resistance
 
 Basic Shadowsocks (even with AEAD) has a discernible fingerprint to advanced DPI. Resistance is significantly enhanced with:
 
@@ -479,7 +479,7 @@ Basic Shadowsocks (even with AEAD) has a discernible fingerprint to advanced DPI
   - `simple-obfs` (older, less robust)
 - **Shadowsocks 2022 Edition**: Incorporates better inherent obfuscation.
 
-#### Installation and Configuration for Shadowsocks
+###### Installation and Configuration for Shadowsocks
 
 **Windows Installation**:
 
@@ -543,13 +543,13 @@ pacman -S shadowsocks-libev
 }
 ```
 
-#### Recommendations
+###### Recommendations
 
 - Use AEAD ciphers (chacha20-ietf-poly1305 or aes-256-gcm) or preferably Shadowsocks 2022 Edition ciphers.
 - **Crucially, combine with a robust pluggable transport like `v2ray-plugin` (using WebSocket and TLS) or `cloak` for environments with active DPI.**
 - Consider CDN fronting with WebSocket + TLS configurations for `v2ray-plugin`.
 
-#### Repository References
+###### Repository References
 
 - Shadowsocks-libev (C implementation): [https://github.com/shadowsocks/shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev)
 - Shadowsocks-Windows (C# client): [https://github.com/shadowsocks/shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows)
@@ -561,7 +561,7 @@ pacman -S shadowsocks-libev
 
 Trojan represents a minimalist approach to circumvention, designed specifically to mimic HTTPS traffic as closely as possible.
 
-#### Technical Architecture
+###### Technical Architecture
 
 Trojan's design philosophy emphasizes:
 
@@ -571,7 +571,7 @@ Trojan's design philosophy emphasizes:
 - Indistinguishability from standard HTTPS traffic to a passive observer.
 - Server listens on port 443 and serves legitimate HTTPS content to unauthenticated requests, while proxying authenticated Trojan requests.
 
-#### Protocol Variants
+###### Protocol Variants
 
 **Trojan (Original / Trojan-GFW)**:
 
@@ -587,7 +587,7 @@ Trojan's design philosophy emphasizes:
 - Pluggable transport support.
 - Multiple user support and traffic statistics.
 
-#### Performance Characteristics
+###### Performance Characteristics
 
 Trojan offers excellent performance characteristics:
 
@@ -595,7 +595,7 @@ Trojan offers excellent performance characteristics:
 - Direct data transmission over TLS.
 - Efficient implementation, especially in Go.
 
-#### Detection Resistance
+###### Detection Resistance
 
 Trojan demonstrates excellent resistance to passive DPI systems:
 
@@ -604,7 +604,7 @@ Trojan demonstrates excellent resistance to passive DPI systems:
 - Server behavior (serving real HTTPS content on the same port) enhances plausibility.
 - Active probing can be a concern if the server doesn't perfectly mimic a standard web server or if password checking is too lenient/obvious. Trojan-Go has improved mitigations.
 
-#### Installation and Configuration for Trojan
+###### Installation and Configuration for Trojan
 
 **Windows Installation**:
 
@@ -677,7 +677,7 @@ brew install trojan-go
 }
 ```
 
-#### Recommendations
+###### Recommendations
 
 - **Crucially, use with a valid TLS certificate (e.g., from Let's Encrypt) for your domain.**
 - Configure a legitimate web server (e.g., Nginx) on the Trojan server to handle non-Trojan requests to port 80 (HTTP redirect to HTTPS) and port 443 (serve a real website), with Trojan handling its specific path or authenticating users.
@@ -685,7 +685,7 @@ brew install trojan-go
 - Consider Trojan-Go with WebSocket for CDN compatibility if direct TLS is problematic.
 - Utilize uTLS fingerprinting (JA3/JA4 spoofing) available in Trojan-Go and some clients to further mimic legitimate browser traffic.
 
-#### Repository References
+###### Repository References
 
 - Trojan (Original C++): [https://github.com/trojan-gfw/trojan](https://github.com/trojan-gfw/trojan)
 - Trojan-Go (Go): [https://github.com/p4gefau1t/trojan-go](https://github.com/p4gefau1t/trojan-go)
@@ -695,7 +695,7 @@ brew install trojan-go
 
 WireGuard represents a modern approach to VPN technology with superior performance characteristics, though with limited inherent obfuscation capabilities for bypassing DPI.
 
-#### Technical Architecture
+###### Technical Architecture
 
 WireGuard employs:
 
@@ -707,7 +707,7 @@ WireGuard employs:
 - BLAKE2s for hashing.
 - Noise Protocol Framework for handshake.
 
-#### WireGuard Wrappers and Extensions for Obfuscation
+###### WireGuard Wrappers and Extensions for Obfuscation
 
 Standard WireGuard traffic is easily identifiable by DPI due to its fixed UDP port (by default) and distinct handshake pattern. To use it in censored environments, obfuscation is necessary:
 
@@ -721,7 +721,7 @@ Standard WireGuard traffic is easily identifiable by DPI due to its fixed UDP po
    - Free WARP configurations can be extracted and used with generic WireGuard clients via tools like `wgcf`.
    - _Effectiveness varies greatly by region and over time._
 
-#### Performance Characteristics
+###### Performance Characteristics
 
 WireGuard offers exceptional performance in ideal network conditions:
 
@@ -730,14 +730,14 @@ WireGuard offers exceptional performance in ideal network conditions:
 - Low CPU utilization.
 - Fast connection establishment and roaming.
 
-#### Detection Resistance
+###### Detection Resistance
 
 - **Standard WireGuard**: Poor. Easily detected and blocked by DPI.
 - **WireGuard with Obfuscation**: Detection resistance depends entirely on the quality of the obfuscation layer.
   - If wrapped in a strong obfuscated tunnel (e.g., VLESS+XTLS or SS+v2ray-plugin), it inherits the resistance of the outer tunnel.
   - WARP's resistance is variable and subject to Cloudflare's implementation, which can change.
 
-#### Installation and Configuration for WireGuard
+###### Installation and Configuration for WireGuard
 
 **Windows Installation**:
 
@@ -799,14 +799,14 @@ Endpoint = your-server-public-ip:51820 # Server's public IP and WireGuard port
 PersistentKeepalive = 25 # Optional, helps with NAT traversal
 ```
 
-#### Recommendations
+###### Recommendations
 
 - **Standard WireGuard is NOT recommended for use in environments with sophisticated DPI without a robust obfuscation layer.**
 - If using WireGuard for circumvention, prioritize wrapping it in a proven obfuscated tunnel (e.g., VLESS, Trojan, SS+PT). This combines WireGuard's performance with the outer tunnel's stealth.
 - Cloudflare WARP can be an option, but its reliability for circumvention is inconsistent and region-dependent. Test thoroughly.
 - Explore tools like `boringtun` (Cloudflare's Rust implementation) if building custom solutions.
 
-#### Repository References
+###### Repository References
 
 - WireGuard Official Site: [https://www.wireguard.com/](https://www.wireguard.com/)
 - WireGuard Code (Monolithic Kernel Module - Historical, now in Linux mainline): [https://git.zx2c4.com/wireguard-linux/](https://git.zx2c4.com/wireguard-linux/)
@@ -819,7 +819,7 @@ PersistentKeepalive = 25 # Optional, helps with NAT traversal
 
 Hysteria represents a novel approach to circumvention technology built on the QUIC protocol with advanced congestion control and obfuscation. Hysteria2 is the current iteration, a significant rewrite and improvement over Hysteria 1.
 
-#### Technical Architecture (Hysteria2)
+###### Technical Architecture (Hysteria2)
 
 Hysteria2's design incorporates:
 
@@ -829,7 +829,7 @@ Hysteria2's design incorporates:
 - **Authentication**: Password-based or via OBFS token.
 - **Proxy Protocols**: Supports SOCKS5 and HTTP proxying on the client-side.
 
-#### Technical Innovations
+###### Technical Innovations
 
 Key innovations in Hysteria2 include:
 
@@ -838,7 +838,7 @@ Key innovations in Hysteria2 include:
 - **Built-in Obfuscation**: Obfuscation is an integral part of the protocol, not an add-on.
 - **Bandwidth Management**: Server can specify upload/download speed limits for users.
 
-#### Performance Characteristics
+###### Performance Characteristics
 
 Hysteria2 demonstrates exceptional performance characteristics, particularly:
 
@@ -847,7 +847,7 @@ Hysteria2 demonstrates exceptional performance characteristics, particularly:
 - Effective bandwidth utilization, especially with "Brutal" congestion control.
 - Can be significantly faster than TCP-based protocols in suboptimal network conditions.
 
-#### Detection Resistance
+###### Detection Resistance
 
 Hysteria2 incorporates anti-detection mechanisms:
 
@@ -857,7 +857,7 @@ Hysteria2 incorporates anti-detection mechanisms:
 
 However, as a UDP-based protocol, it can be vulnerable to blanket UDP blocking or throttling if censors choose this aggressive approach. The quality of obfuscation against sophisticated QUIC fingerprinting is an ongoing area of scrutiny.
 
-#### Installation and Configuration for Hysteria2
+###### Installation and Configuration for Hysteria2
 
 **Windows/macOS/Linux Installation**:
 
@@ -940,14 +940,14 @@ bandwidth:
   down: 500 mbps
 ```
 
-#### Recommendations
+###### Recommendations
 
 - Hysteria2 is particularly effective in challenging network environments with packet loss or for users far from their servers.
 - **Using TLS with a valid certificate on the server is highly recommended** to make the initial QUIC handshake appear more like standard HTTPS/3.
 - Optimize `bandwidth` settings based on actual server and client connection capabilities to get the best from congestion control.
 - Test if UDP traffic is heavily restricted or throttled in your target network. If so, Hysteria2 might be less viable than TCP-based alternatives.
 
-#### Repository References
+###### Repository References
 
 - Hysteria Project (Hysteria2 is the main focus): [https://github.com/apernet/hysteria](https://github.com/apernet/hysteria)
 - Hysteria2 Documentation: [https://v2.hysteria.network/](https://v2.hysteria.network/) (or linked from GitHub)
@@ -956,7 +956,7 @@ bandwidth:
 
 TUIC (TUI Claw) is another QUIC-based tunnel protocol designed for high-performance, low latency, and detection resistance. It shares some philosophical similarities with Hysteria but has its own distinct implementation and features.
 
-#### Technical Architecture (TUIC v5 / latest)
+###### Technical Architecture (TUIC v5 / latest)
 
 TUIC employs:
 
@@ -968,7 +968,7 @@ TUIC employs:
 - **0-RTT Handshake**: Aims for quick connection re-establishment.
 - **Relaying**: Can act as a SOCKS5/HTTP proxy.
 
-#### Protocol Innovations
+###### Protocol Innovations
 
 TUIC introduces several technical innovations:
 
@@ -977,7 +977,7 @@ TUIC introduces several technical innovations:
 - Flexible congestion control options.
 - Built-in multiplexing and lightweight proxying capabilities.
 
-#### Performance Characteristics
+###### Performance Characteristics
 
 TUIC demonstrates excellent performance:
 
@@ -986,7 +986,7 @@ TUIC demonstrates excellent performance:
 - Good performance on mobile networks and high-latency links.
 - Low CPU usage compared to some other complex protocols.
 
-#### Detection Resistance
+###### Detection Resistance
 
 TUIC incorporates anti-detection features:
 
@@ -997,7 +997,7 @@ TUIC incorporates anti-detection features:
 
 Similar to Hysteria2, its reliance on UDP means it can be affected by blanket UDP blocking. The sophistication of its QUIC obfuscation against dedicated fingerprinting efforts is an area of ongoing development and scrutiny.
 
-#### Installation and Configuration for TUIC
+###### Installation and Configuration for TUIC
 
 **Windows/macOS/Linux Installation**:
 
@@ -1072,14 +1072,14 @@ Similar to Hysteria2, its reliance on UDP means it can be affected by blanket UD
 }
 ```
 
-#### Recommendations
+###### Recommendations
 
 - TUIC is particularly effective for mobile networks and scenarios requiring quick connection setup/resumption.
 - **Using TLS with a valid certificate on the server is essential.** Ensure SNI and ALPN settings are consistent between client and server.
 - Optimize congestion control (`bbr` is often a good default) and window sizes based on network characteristics.
 - As with Hysteria2, test UDP viability in the target network.
 
-#### Repository References
+###### Repository References
 
 - TUIC Project: [https://github.com/EAimTY/tuic](https://github.com/EAimTY/tuic)
 - TUIC Protocol Specifications (often in docs or discussions within the repo)
@@ -1088,7 +1088,7 @@ Similar to Hysteria2, its reliance on UDP means it can be affected by blanket UD
 
 Outline is an open-source project developed by Jigsaw (a unit within Google) designed for ease of deployment and management of Shadowsocks servers, making it accessible for individuals and organizations to run their own VPN-like services.
 
-#### Technical Architecture
+###### Technical Architecture
 
 Outline consists of:
 
@@ -1097,7 +1097,7 @@ Outline consists of:
 - **Outline Client**: Cross-platform client applications (Windows, macOS, Linux, Android, iOS) that connect to Outline servers using access keys.
 - **Access Keys**: Unique `ss://` URIs containing server information, port, password, and method for easy client configuration.
 
-#### Distinguishing Features
+###### Distinguishing Features
 
 Outline offers several unique features focused on usability:
 
@@ -1107,7 +1107,7 @@ Outline offers several unique features focused on usability:
 - **Cross-platform Client Support**: Consistent client experience across major platforms.
 - **Automated Security Updates**: The server image is designed to update itself automatically (for Docker-based deployments).
 
-#### Performance Characteristics
+###### Performance Characteristics
 
 Outline provides solid performance, characteristic of a well-implemented Shadowsocks server:
 
@@ -1115,14 +1115,14 @@ Outline provides solid performance, characteristic of a well-implemented Shadows
 - Minimal protocol overhead.
 - Reliable connection handling.
 
-#### Detection Resistance
+###### Detection Resistance
 
 - Outline uses standard Shadowsocks, which, as discussed in Section 3.3, has a discernible fingerprint without additional obfuscation.
 - **Outline itself does not natively integrate advanced pluggable transports like `v2ray-plugin` or `cloak` through its standard Manager interface.**
 - Its resistance relies on the fact that users run their own servers on diverse IPs, making widespread blocking harder than targeting large commercial VPN providers.
 - Sophisticated DPI can identify and block Shadowsocks traffic if it's not further obfuscated.
 
-#### Installation and Configuration for Outline
+###### Installation and Configuration for Outline
 
 **Server Installation (via Outline Manager)**:
 
@@ -1145,14 +1145,14 @@ Outline provides solid performance, characteristic of a well-implemented Shadows
 3. Paste the access key. The client will automatically configure itself.
 4. Click "Connect".
 
-#### Recommendations
+###### Recommendations
 
 - Ideal for individuals or small organizations wanting an easy way to set up and manage their own Shadowsocks servers without deep technical knowledge.
 - Good for basic geo-unblocking and privacy from local ISPs.
 - **For use in environments with strong censorship and DPI, Outline's default Shadowsocks setup may not be sufficient.** In such cases, consider using the underlying Shadowsocks server IP/port/password with a more advanced client that supports adding pluggable transports like `v2ray-plugin`.
 - Regularly update both the Outline Manager and Outline Clients. Ensure the server is auto-updating if deployed via the standard Docker method.
 
-#### Repository References
+###### Repository References
 
 - Outline Official Website: [https://getoutline.org/](https://getoutline.org/)
 - Outline Manager: [https://github.com/Jigsaw-Code/outline-manager](https://github.com/Jigsaw-Code/outline-manager)
@@ -1164,7 +1164,7 @@ Outline provides solid performance, characteristic of a well-implemented Shadows
 
 This section provides a systematic comparison of the major circumvention protocols based on empirical testing and technical analysis, focusing on their state in 2025.
 
-#### Performance Metrics
+###### Performance Metrics
 
 | Protocol                         | Latency Impact | Throughput (Ideal) | CPU Usage (Client/Server) | Memory Footprint | Conn. Estab. | Lossy Network Perf.  |
 | -------------------------------- | -------------- | ------------------ | ------------------------- | ---------------- | ------------ | -------------------- |
@@ -1177,7 +1177,7 @@ This section provides a systematic comparison of the major circumvention protoco
 | Shadowsocks+v2ray-plugin(WS+TLS) | Medium         | Good               | Low-Medium / Low-Medium   | Low-Medium       | Medium       | Fair-Moderate        |
 | WireGuard (Standalone)           | Very Low       | Excellent          | Very Low / Very Low       | Very Low         | Very Fast    | Fair (UDP sensitive) |
 
-#### Detection Resistance Comparison (Standalone Protocol Resistance without CDN, unless specified)
+###### Detection Resistance Comparison (Standalone Protocol Resistance without CDN, unless specified)
 
 | Protocol                         | Passive DPI Resistance (Fingerprint) | Active Probing Resistance | Traffic Analysis Resistance (Mimicry) | CDN Compatibility |
 | -------------------------------- | ------------------------------------ | ------------------------- | ------------------------------------- | ----------------- |
@@ -1199,7 +1199,7 @@ This section provides a systematic comparison of the major circumvention protoco
 - "Poor" implies easily identifiable signatures.
 - CDN compatibility primarily refers to protocols that can easily be proxied via CDNs using common web protocols (HTTP/WS over TLS). UDP-based protocols are generally not CDN-compatible in the same way.
 
-#### Use Case Recommendations Summary (refer to Section 9 for detailed discussion)
+###### Use Case Recommendations Summary (refer to Section 9 for detailed discussion)
 
 | Use Case / Priority                        | Primary Recommendation(s) (2025)     | Secondary/Alternative(s)                    |
 | ------------------------------------------ | ------------------------------------ | ------------------------------------------- |
@@ -1221,7 +1221,7 @@ This section details notable client software available for managing and utilizin
 
 Windows offers a wide range of client implementations for circumvention protocols.
 
-#### Comprehensive Clients (Multi-Protocol GUI)
+###### Comprehensive Clients (Multi-Protocol GUI)
 
 **1. Clash Verge / Clash Nyanpasu** \* _Core Engine_: Clash.Meta \* _Protocols_: VMess, VLESS, Trojan, Shadowsocks (incl. 2022), TUIC, Hysteria2, Snell, HTTP(S), SOCKS5. \* _Features_: Rich rule-based routing (domain, IP, process, geoIP), policy groups, TUN mode for system-wide VPN, profile management (local/remote), scripting, UI themes. Actively developed. \* _Installation_: Download from GitHub releases.
 _Clash Verge: [https://github.com/zzzgydi/clash-verge](https://github.com/zzzgydi/clash-verge)
@@ -1231,7 +1231,7 @@ _ Clash Nyanpasu: [https://github.com/LibNyanpasu/clash-nyanpasu](https://github
 
 **3. v2rayN** \* _Core Engine_: Xray-core (default), V2Fly-core. \* _Protocols_: VMess, VLESS (incl. XTLS/Reality), Shadowsocks, Trojan, SOCKS, HTTP. \* _Features_: Subscription management, basic routing rules, PAC configuration, server testing, QR code support. \* _Installation_: Download from GitHub releases: [https://github.com/2dust/v2rayN](https://github.com/2dust/v2rayN) \* _Commentary_: Long-standing, reliable client, particularly strong for V2Ray/Xray specific configurations. Simpler routing than Clash or NekoRay.
 
-#### Protocol-Specific Clients / Other Notables
+###### Protocol-Specific Clients / Other Notables
 
 **1. Shadowsocks-Windows** \* _Protocols_: Shadowsocks (incl. AEAD, SS-2022 support varies by fork/version). Supports plugins. \* _Installation_: [https://github.com/shadowsocks/shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows) \* _Commentary_: Official client, lightweight. Best used with `v2ray-plugin` for obfuscation.
 
@@ -1243,7 +1243,7 @@ _ Clash Nyanpasu: [https://github.com/LibNyanpasu/clash-nyanpasu](https://github
 
 macOS users have access to several high-quality GUI clients.
 
-#### Comprehensive Clients (Multi-Protocol GUI)
+###### Comprehensive Clients (Multi-Protocol GUI)
 
 **1. Clash Verge / Clash Nyanpasu** \* _Core Engine_: Clash.Meta \* _Protocols & Features_: Same as Windows version (see 4.1). \* _Installation_: Download from GitHub releases (see 4.1 links). \* _Commentary_: Top-tier choice on macOS for features and usability.
 
@@ -1255,7 +1255,7 @@ macOS users have access to several high-quality GUI clients.
 
 **5. V2RayU / V2RayX (May be less actively maintained)** \* _Core Engine_: V2Fly-core or Xray-core. \* _Protocols_: VMess, VLESS, Shadowsocks. \* _Features_: Basic V2Ray/Xray management, PAC mode. \* _Installation_: GitHub releases (e.g., V2RayU: [https://github.com/yanue/V2RayU](https://github.com/yanue/V2RayU)). \* _Commentary_: Simpler options, check maintenance status before adopting.
 
-#### Protocol-Specific Clients / Other Notables
+###### Protocol-Specific Clients / Other Notables
 
 **1. ShadowsocksX-NG-R** \* _Protocols_: Shadowsocks (incl. SSR, AEAD). Supports plugins. \* _Installation_: GitHub: [https://github.com/qinyuhang/ShadowsocksX-NG-R](https://github.com/qinyuhang/ShadowsocksX-NG-R) (example fork, many exist). \* _Commentary_: Popular SS client fork.
 
@@ -1265,7 +1265,7 @@ macOS users have access to several high-quality GUI clients.
 
 Linux users benefit from powerful CLI tools and increasingly capable GUI clients.
 
-#### Comprehensive Clients (Multi-Protocol GUI)
+###### Comprehensive Clients (Multi-Protocol GUI)
 
 **1. Clash Verge / Clash Nyanpasu** \* _Core Engine_: Clash.Meta \* _Protocols & Features_: Same as Windows/macOS versions (see 4.1). AppImage or deb/rpm often available. \* _Installation_: Download from GitHub releases (see 4.1 links). \* _Commentary_: Excellent choice for a full-featured GUI on Linux.
 
@@ -1273,7 +1273,7 @@ Linux users benefit from powerful CLI tools and increasingly capable GUI clients
 
 **3. Qv2ray (Maintenance status is a concern - check project activity)** \* _Core Engine_: Plugin-based, supports V2Fly-core, Xray-core, Trojan-Go, NaiveProxy, etc. \* _Protocols_: Varies by plugin. \* _Features_: Profile management, advanced routing, plugin system. \* _Installation_: GitHub: [https://github.com/Qv2ray/Qv2ray](https://github.com/Qv2ray/Qv2ray) (Check for community forks if main project is inactive). \* _Commentary_: Was a powerful cross-platform GUI. Verify current status.
 
-#### Command-Line Interface (CLI) Clients (Refer to Section 8.3 for details)
+###### Command-Line Interface (CLI) Clients (Refer to Section 8.3 for details)
 
 The primary CLI tools are the cores themselves:
 
@@ -1292,7 +1292,7 @@ These are typically run as services (e.g., via systemd) and provide SOCKS5/HTTP 
 
 Android has a vibrant ecosystem of powerful circumvention clients.
 
-#### Comprehensive Clients (Multi-Protocol GUI)
+###### Comprehensive Clients (Multi-Protocol GUI)
 
 **1. NekoBox for Android** \* _Core Engine_: sing-box. \* _Protocols_: Extremely broad via sing-box (VMess, VLESS, Trojan, SS, TUIC, Hysteria2, WireGuard, ShadowTLS, etc.). \* _Features_: Profile management, subscription support, rule-based routing (domain, geoIP, app), per-app proxy, TUN mode, QR code, batch export. \* _Installation_: GitHub releases: [https://github.com/MatsuriDayo/NekoBoxForAndroid](https://github.com/MatsuriDayo/NekoBoxForAndroid) (Also on some F-Droid repos). \* _Commentary_: Arguably the most feature-rich and versatile client on Android in 2025 due to sing-box.
 
@@ -1304,7 +1304,7 @@ _ CFMA (MetaCubeX, more active): [https://github.com/MetaCubeX/ClashMetaForAndro
 
 **4. SagerNet / Matsuri (Older, sing-box based but NekoBox is its evolution)** \* _Core Engine_: sing-box (Matsuri is one of the earlier sing-box GUIs). \* _Commentary_: NekoBox for Android is generally the more current and feature-complete sing-box GUI from the same developer sphere.
 
-#### Protocol-Specific Clients / Other Notables
+###### Protocol-Specific Clients / Other Notables
 
 **1. Shadowsocks for Android** \* _Protocols_: Shadowsocks (AEAD, SS-2022, plugins like v2ray-plugin). \* _Installation_: GitHub: [https://github.com/shadowsocks/shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android) (Also on Google Play, F-Droid). \* _Commentary_: Official SS client, reliable.
 
@@ -1314,7 +1314,7 @@ _ CFMA (MetaCubeX, more active): [https://github.com/MetaCubeX/ClashMetaForAndro
 
 iOS client options are primarily available through the App Store and are often paid due to Apple's policies and the complexity of NetworkExtension development.
 
-#### Comprehensive Clients (Multi-Protocol GUI - Paid)
+###### Comprehensive Clients (Multi-Protocol GUI - Paid)
 
 **1. Shadowrocket** \* _Protocols_: Extensive support - Shadowsocks (incl. 2022, various plugins), VMess, VLESS (incl. XTLS/Reality), Trojan, Snell, HTTP(S), SOCKS5, Lua scripting, Hysteria/Hysteria2, TUIC, WireGuard. \* _Features_: Rule-based routing (domain, geoIP, scriptable), On-Demand VPN, subscription management, MitM (HTTPS decryption), traffic statistics. \* _Installation_: App Store (Paid). \* _Commentary_: Long-standing "Swiss Army knife" for iOS, known for broad protocol support and powerful features.
 
@@ -1326,7 +1326,7 @@ iOS client options are primarily available through the App Store and are often p
 
 **5. Surge for iOS (Paid)** \* _Protocols & Features_: Similar to its macOS counterpart (see 4.2), highly advanced. \* _Installation_: App Store (Paid, often separate iPhone/iPad versions or universal). \* _Commentary_: Premium, high-performance client for power users.
 
-#### Protocol-Specific / Free(er) Options
+###### Protocol-Specific / Free(er) Options
 
 **1. WireGuard for iOS** \* _Protocols_: WireGuard. \* _Installation_: App Store (Free). \* _Commentary_: Official client, works well.
 
@@ -1342,7 +1342,7 @@ Effective server deployment is critical for circumvention system performance, re
 
 Selection of a hosting provider and server location significantly impacts the utility of a circumvention server.
 
-#### Hosting Provider Selection Criteria
+###### Hosting Provider Selection Criteria
 
 **Technical Considerations**:
 
@@ -1361,7 +1361,7 @@ Selection of a hosting provider and server location significantly impacts the ut
 - **Payment Anonymity**: Options for cryptocurrency or cash payments if desired.
 - **DMCA/Copyright Complaint Handling**: How the provider responds to such notices.
 
-#### Recommended Hosting Providers (General Categories, as of 2025)
+###### Recommended Hosting Providers (General Categories, as of 2025)
 
 _This is not an exhaustive list, and provider quality can change. Always do current research._
 
@@ -1389,7 +1389,7 @@ _ Bahnhof (Swedish provider known for strong privacy stance, though primarily de
 _Hetzner (Germany/Finland/USA, good value, excellent hardware)
 _ OVHcloud / SoYouStart / Kimsufi (France/Canada/Global, wide range of options) \* Leaseweb (Global, good network)
 
-#### Server Specifications
+###### Server Specifications
 
 **Minimum Recommended (for a few users, moderate traffic)**:
 
@@ -1405,7 +1405,7 @@ _ OVHcloud / SoYouStart / Kimsufi (France/Canada/Global, wide range of options) 
 - Storage: 40GB+ NVMe/SSD
 - Bandwidth Allowance: 2TB+/month or unmetered (check fair use policies)
 
-#### Server Location Selection
+###### Server Location Selection
 
 **Key Factors**:
 
@@ -1429,7 +1429,7 @@ _ OVHcloud / SoYouStart / Kimsufi (France/Canada/Global, wide range of options) 
 
 Domain fronting leverages trusted, high-reputation domains (often CDNs) to obscure the true destination of circumvention traffic. The idea is that censors are unwilling to block these major domains entirely.
 
-#### Technical Implementation
+###### Technical Implementation
 
 Domain fronting typically works by manipulating HTTP/HTTPS headers:
 
@@ -1444,7 +1444,7 @@ Domain fronting typically works by manipulating HTTP/HTTPS headers:
 - **"SNI Fronting" or using a shared CDN certificate with multiple domains can still work to some extent if the CDN allows it.**
 - More common now is **"CDN as a Reverse Proxy"** where the circumvention traffic is tunneled through standard web protocols (WebSocket over TLS) to a user-owned domain that is legitimately proxied by the CDN. The SNI and Host header match the user's domain, and the CDN simply forwards this traffic. This isn't "fronting" in the original sense but achieves a similar goal of using the CDN's IPs.
 
-#### CDN-Based Fronting (Modern Approach: CDN as Reverse Proxy)
+###### CDN-Based Fronting (Modern Approach: CDN as Reverse Proxy)
 
 **Configuration Steps**:
 
@@ -1504,7 +1504,7 @@ server {
 }
 ```
 
-#### CDN Provider Recommendations for this approach
+###### CDN Provider Recommendations for this approach
 
 - **Cloudflare**: Most widely used, generous free tier, robust WebSocket support.
 - **Bunny CDN**: Good performance, pay-as-you-go, may be more lenient.
@@ -1515,7 +1515,7 @@ server {
 
 CDN integration, as described above, provides performance benefits (caching, closer edge nodes) and significant detection resistance by masking the origin server's IP address and making traffic appear to originate from/destinate to benign CDN IPs.
 
-#### Protocol Compatibility with CDN (WebSocket-based)
+###### Protocol Compatibility with CDN (WebSocket-based)
 
 Protocols that can be transported over WebSocket and then encapsulated in TLS are best suited for CDN integration:
 
@@ -1530,7 +1530,7 @@ Protocols that can be transported over WebSocket and then encapsulated in TLS ar
 
 **Note on QUIC/UDP with CDNs**: Some CDNs (like Cloudflare) are starting to support proxying generic UDP traffic or QUIC, but this is less mature and might require paid plans or specific configurations (e.g., Cloudflare Spectrum). It's not the common "HTTP/S proxying" model. Hysteria2/TUIC can't use standard web CDNs in the same way WebSocket-based protocols do.
 
-#### Implementation Steps (Recap/Summary)
+###### Implementation Steps (Recap/Summary)
 
 1. **Domain**: Acquire a domain name.
 2. **Server Setup**:
@@ -1555,7 +1555,7 @@ Protocols that can be transported over WebSocket and then encapsulated in TLS ar
    - Path: `/yourws` (matching server config)
    - SNI/Host: `your-proxy-domain.com`
 
-#### Security Considerations (Continued from original document)
+###### Security Considerations (Continued from original document)
 
 **Protection Measures**:
 
@@ -1587,13 +1587,13 @@ Beyond standard protocol deployments, several advanced techniques enhance resili
 
 Bridge-based systems act as unlisted entry points to a censorship circumvention network, making it harder for censors to block all access points. The Tor network's use of bridges is a prime example.
 
-#### Technical Architecture
+###### Technical Architecture
 
 - **Relay Nodes**: Publicly listed servers that form the core of the network.
 - **Bridge Nodes**: Unlisted relay nodes whose IP addresses are not publicly disseminated but shared privately or through controlled distribution channels (e.g., BridgeDB, email, trusted peers).
 - **Pluggable Transports (PT)**: Mechanisms that obfuscate traffic between the client and the bridge, making it appear as innocuous internet traffic (e.g., standard HTTPS, or random-looking data). This is crucial as bridge IPs themselves can be discovered and blocked.
 
-#### Prominent Implementations
+###### Prominent Implementations
 
 **1. Tor Bridges with Pluggable Transports**
 
@@ -1612,7 +1612,7 @@ Bridge-based systems act as unlisted entry points to a censorship circumvention 
 **2. Custom Bridge Setups for Other Protocols**
 While Tor formalizes the bridge concept, one can apply similar principles to other protocols like VLESS, Trojan, or Shadowsocks by: - Setting up private, unlisted servers. - Sharing access details discreetly. - Potentially using a "bridge" server as an entry point that then forwards to another "exit" server, possibly in a different jurisdiction or using a different protocol.
 
-#### Considerations for Bridge-based Systems
+###### Considerations for Bridge-based Systems
 
 - **Bridge Discovery & Blocking**: Censors actively attempt to discover and block bridges. Distribution mechanisms must be robust yet discreet. Active scanning for Tor bridges is a known tactic.
 - **Scalability**: Scaling bridge infrastructure can be challenging and costly if self-hosted. Volunteer-run bridges are crucial for Tor.
@@ -1623,7 +1623,7 @@ While Tor formalizes the bridge concept, one can apply similar principles to oth
 
 Snowflake is a pluggable transport for Tor that utilizes a large pool of ephemeral WebRTC proxies, often run by volunteers in their web browsers or as standalone proxies.
 
-#### Technical Architecture
+###### Technical Architecture
 
 - **Client**: User seeking circumvention, running Tor Browser or Tor daemon with Snowflake enabled.
 - **Broker**: A central server (itself often accessed via domain fronting) that facilitates rendezvous between clients and Snowflake proxies. It manages a list of available Snowflake proxies.
@@ -1634,7 +1634,7 @@ Snowflake is a pluggable transport for Tor that utilizes a large pool of ephemer
     The proxy relays traffic between the client and a Tor bridge.
 - **Bridge (Snowflake Bridge)**: A standard Tor bridge that is configured to accept connections from Snowflake proxies.
 
-#### How Snowflake Works
+###### How Snowflake Works
 
 1. The Tor client contacts the Broker to request a Snowflake proxy.
 2. The Broker provides WebRTC connection details (SDP offer/answer) for an available proxy.
@@ -1642,7 +1642,7 @@ Snowflake is a pluggable transport for Tor that utilizes a large pool of ephemer
 4. The Snowflake proxy then connects to a Snowflake-compatible Tor bridge and relays traffic.
 5. This setup means the censor only sees the client connecting to many different IPs (the volunteer proxies) via WebRTC, and the volunteer proxies connecting to Tor bridges.
 
-#### Advantages
+###### Advantages
 
 - **Large, Dynamic, Ephemeral Proxy Pool**: Thousands of volunteers run proxies, making it very difficult for censors to block all of them. Proxies frequently change IPs.
 - **Low Barrier to Entry for Proxies**: Volunteers can run proxies easily, increasing the pool size.
@@ -1655,7 +1655,7 @@ Snowflake is a pluggable transport for Tor that utilizes a large pool of ephemer
 - **WebRTC Fingerprinting**: Advanced adversaries might attempt to fingerprint specific STUN/TURN server usage or WebRTC handshake patterns unique to Snowflake.
 - **NAT Traversal**: WebRTC relies on STUN/TURN for NAT traversal, which can sometimes fail or add latency.
 
-#### Resources
+###### Resources
 
 - **Snowflake Project Information**: [https://snowflake.torproject.org/](https://snowflake.torproject.org/)
 - **Run a Snowflake Proxy (Browser)**: [https://snowflake.torproject.org/embed](https://snowflake.torproject.org/embed)
@@ -1666,7 +1666,7 @@ Snowflake is a pluggable transport for Tor that utilizes a large pool of ephemer
 
 Multi-hop configurations involve routing traffic through multiple proxy servers before reaching the final destination. This can enhance anonymity (by separating entry and exit points) and potentially bypass certain geo-restrictions or blocking mechanisms that target single exit nodes.
 
-#### Architecture Variants
+###### Architecture Variants
 
 1. **Cascaded Proxies (Same Protocol)**: `Client -> Proxy1 -> Proxy2 -> ... -> ProxyN -> Destination`
 
@@ -1678,7 +1678,7 @@ Multi-hop configurations involve routing traffic through multiple proxy servers 
    - Example: `Client -> Shadowsocks (local, fast first hop) -> VLESS+XTLS (intermediate, robust obfuscation) -> Tor (exit, for anonymity) -> Destination`
    - Leverages strengths of different protocols at different stages. The initial hop might be chosen for speed or ease of access, intermediate hops for obfuscation, and final hops for anonymity or specific exit location.
 
-#### Implementation in Clients
+###### Implementation in Clients
 
 Many advanced clients support proxy chaining:
 
@@ -1725,13 +1725,13 @@ Many advanced clients support proxy chaining:
 - **Clash.Meta**: Supports proxy groups that can act as chains or fallbacks.
 - **GUI Clients (NekoRay, Clash Verge, etc.)**: Often provide UI elements to configure chains if their underlying core (sing-box, Clash.Meta, Xray) supports it.
 
-#### Advantages
+###### Advantages
 
 - **Increased Anonymity/Privacy**: By separating the entry node (seen by ISP) from the exit node (seen by destination), it makes tracing traffic back to the origin user more difficult.
 - **Bypassing Sophisticated Blocks**: Can circumvent blocks that target specific exit IPs or protocols if intermediate hops are in less restricted regions or use different, unblocked protocols.
 - **Jurisdictional Arbitrage**: Routing data through specific legal jurisdictions to take advantage of differing data protection laws (though effectiveness is complex).
 
-#### Disadvantages
+###### Disadvantages
 
 - **Performance Degradation**: Each hop adds latency and is a potential bottleneck for throughput. This is the primary drawback.
 - **Complexity**: Configuration can be complex, especially with multiple different protocols.
@@ -1743,14 +1743,14 @@ Many advanced clients support proxy chaining:
 
 Pluggable Transports (PTs) are a general concept, formalized by the Tor Project but applicable more broadly, for modular systems that transform network traffic flow between a client and a server. The goal is to make the traffic difficult for censors to identify, classify, and block. "Pliable" transports often imply an ability to adapt or change characteristics.
 
-#### Key Concepts
+###### Key Concepts
 
 - **Traffic Obfuscation**: Altering traffic characteristics (packet sizes, timing, byte patterns) to evade DPI signatures. This can range from simple XORing to complex cryptographic transformations.
 - **Protocol Mimicry**: Making circumvention traffic closely resemble the legitimate traffic of common, unblocked protocols (e.g., HTTP, TLS, DNS, or even proprietary protocols like Skype, WhatsApp).
 - **Shape-Shifting / Polymorphism**: Designing transports that can dynamically change their traffic patterns, possibly in response to detected censorship or network conditions, making them harder to fingerprint consistently.
 - **Modularity**: PTs are often designed to be "plugged into" various proxy protocols (like Shadowsocks, OpenVPN, or Tor itself) without modifying the core proxy.
 
-#### Notable Pluggable Transports (Beyond Tor-specific, for general proxy use)
+###### Notable Pluggable Transports (Beyond Tor-specific, for general proxy use)
 
 1. **v2ray-plugin**
 
@@ -1781,7 +1781,7 @@ Pluggable Transports (PTs) are a general concept, formalized by the Tor Project 
    - _Features_: Minimalist design, mimics TLS handshake. Comes in v1, v2, and v3, with v3 being more robust.
    - _GitHub (Reference Implementation)_: [https://github.com/ihciah/shadow-tls](https://github.com/ihciah/shadow-tls)
 
-#### Considerations for Pluggable Transports
+###### Considerations for Pluggable Transports
 
 - **Performance Overhead**: Obfuscation, mimicry, and additional encryption layers inevitably introduce some latency and computational overhead. This varies greatly between PTs.
 - **Fingerprintability**: Even the most sophisticated PTs can potentially be fingerprinted over time as censors adapt. Continuous development, research into new obfuscation techniques, and polymorphism are key to long-term viability.

@@ -15,10 +15,9 @@
 </small>
 
 <div align="center">
-<h3>Resilient Network Architectures<h3>
-<h4>  Analysis of Secure Communication Protocols in Adversarial Environments<h4>
-<h4>A Systematic Review of Contemporary Network Technologies</h4>
-<h5>Technical Architectures, Implementation Methodologies, and Empirical Efficacy Analysis</h5>
+<h2>Resilient Network Architectures<h3>
+<h3>  Analysis of Secure Communication Protocols in Adversarial Environments<h4>
+<h4>Technical Architectures, Implementation Methodologies, and Empirical Efficacy Analysis</h5>
 </div>
 
 #### Abstract

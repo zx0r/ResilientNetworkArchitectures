@@ -9,10 +9,10 @@
 
 > The authors, contributors, and maintainers of this project:
 > 
-> - Provide this information "as is" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
+> - Provide this information "as is" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose.
 > - Assume no liability for any misuse of the information or software provided in this project, nor for any damages or losses resulting from its use.
 
-> By accessing, using, or contributing to this project, you acknowledge that you have read, understood, and agree to these terms. If you do not agree, do not use or access this project.
+> By accessing, using, or contributing to this project, you acknowledge that you have read, understood, and agree to these terms.
 
 </small>
 

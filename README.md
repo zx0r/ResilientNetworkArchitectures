@@ -2,12 +2,13 @@
 
 > #### DISCLAIMER
 
-> This project and the information contained herein (including the configuration examples, scripts, and benchmarks) are provided for **academic research, educational, and informational purposes only**. The goal is to foster a better understanding of network technologies, network security, and privacy-enhancing tools.
-> The technologies and methods discussed can be complex and may have legal implications that vary significantly by jurisdiction. Users of this information are **solely responsible** for ensuring that their actions comply with all applicable local, state, national, and international laws and regulations.
+> This project and the information contained herein (including the configuration examples, scripts, and benchmarks) are provided for **academic research, educational, and informational purposes only**.
+> The goal is to foster a better understanding of network technologies, network security, and privacy-enhancing tools.
+> The technologies and methods discussed can be complex and may have legal implications that vary significantly by jurisdiction.
+> Users of this information are **solely responsible** for ensuring that their actions comply with all applicable local, state, national, and international laws and regulations.
 
 > The authors, contributors, and maintainers of this project:
->
-> - Do not endorse or encourage any illegal activity or the use of these technologies in violation of applicable laws.
+> 
 > - Provide this information "as is" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
 > - Assume no liability for any misuse of the information or software provided in this project, nor for any damages or losses resulting from its use.
 

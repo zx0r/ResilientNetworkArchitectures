@@ -2,7 +2,7 @@
 
 > #### DISCLAIMER
 
-> This project and the information contained herein (including the configuration examples, scripts, and benchmarks) are provided for **academic research, educational, and informational purposes only**. The goal is to foster a better understanding of network circumvention technologies, network security, and privacy-enhancing tools.
+> This project and the information contained herein (including the configuration examples, scripts, and benchmarks) are provided for **academic research, educational, and informational purposes only**. The goal is to foster a better understanding of network technologies, network security, and privacy-enhancing tools.
 > The technologies and methods discussed can be complex and may have legal implications that vary significantly by jurisdiction. Users of this information are **solely responsible** for ensuring that their actions comply with all applicable local, state, national, and international laws and regulations.
 
 > The authors, contributors, and maintainers of this project:

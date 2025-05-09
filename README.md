@@ -35,7 +35,7 @@ This study provides a systematic, neutral evaluation of network resilience techn
 
 1. [Introduction](#introduction)
 2. [Methodology](#methodology)
-3. [Core secure access architectures Protocols](#core-secure access architectures-protocols)
+3. [Core Resilient Network Protocols](#core-resilient-network-protocols)
    - [V2Ray/V2Fly Ecosystem](#v2rayv2fly-ecosystem)
    - [XRay and XTLS Technology](#xray-and-xtls-technology)
    - [Shadowsocks Protocol Family](#shadowsocks-protocol-family)
@@ -55,7 +55,7 @@ This study provides a systematic, neutral evaluation of network resilience techn
    - [Server Hosting Recommendations](#server-hosting-recommendations)
    - [Domain Fronting Techniques](#domain-fronting-techniques)
    - [CDN Integration Methodologies](#cdn-integration-methodologies)
-6. [Advanced secure access architectures Techniques](#advanced-secure access architectures-techniques)
+6. [Advanced Network Resilience Techniques](#advanced-network-resilience-techniques)
    - [Bridge-based Systems](#bridge-based-systems)
    - [Snowflake and WebRTC Implementations](#snowflake-and-webrtc-implementations)
    - [Multi-hop Configurations](#multi-hop-configurations)
@@ -119,7 +119,7 @@ This analysis employs a multi-faceted methodology to evaluate secure access arch
 
 Performance metrics were gathered using standardized testing tools including iperf3, ping, traceroute, and custom traffic analysis scripts. All tests were performed across multiple geographic regions to account for network path variations.
 
-#### 3. Core secure access architectures Protocols <a name="core-secure access architectures-protocols"></a>
+#### 3. Core secure access architectures Protocols <a name="core-resilient-network-protocols"></a>
 
 ##### 3.1 V2Ray/V2Fly Ecosystem <a name="v2rayv2fly-ecosystem"></a>
 
@@ -1579,7 +1579,7 @@ Protocols that can be transported over WebSocket and then encapsulated in TLS ar
 - **Performance Overhead**: CDNs add at least one more hop. While edge caching can improve static content delivery, for dynamic proxy traffic, it can introduce minor latency. Choose CDN edge locations wisely.
 - **TLS Certificate Mismatches**: Ensure certificates are valid and correctly configured on both the origin and the CDN to avoid errors or security warnings.
 
-#### 6. Advanced secure access architectures Techniques <a name="advanced-secure access architectures-techniques"></a>
+#### 6. Advanced secure access architectures Techniques <a name="advanced-network-resilience-techniques"></a>
 
 Beyond standard protocol deployments, several advanced techniques enhance resilience against sophisticated.
 

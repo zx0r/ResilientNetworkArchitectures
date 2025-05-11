@@ -1,7 +1,6 @@
 <small>
 
 > ##### LEGAL DISCLAIMER
-
 > This project and the information contained herein are provided for academic research, cybersecurity education, and informational purposes only.
 > The goal is to foster a better understanding of network technologies, network security, and privacy-enhancing tools.
 > The technologies and methods discussed can be complex and may have legal implications that vary significantly by jurisdiction.
